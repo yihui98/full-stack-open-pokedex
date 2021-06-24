@@ -28,10 +28,8 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5000
       - name: heroku deploy
-        steps:
-        - uses: actions/checkout@v2
-        - uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
-            with:
-            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-            heroku_app_name: "fast-reaches-52759"
-            heroku_email: "yihui98@live.com"
+        uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "fast-reaches-52759"
+          heroku_email: "yihui98@live.com"
