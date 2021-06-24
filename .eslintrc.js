@@ -1,4 +1,9 @@
 module.exports = {
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "env": {
     'commonjs': true,
     'node': true,
