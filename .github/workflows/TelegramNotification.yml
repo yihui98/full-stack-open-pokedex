@@ -20,3 +20,9 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO_ME }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           args: Hello User!!!
+      - name: send custom message with args to me
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_C }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: Hello, it's your boss. Please continue to work on the video instead of being on telegram.
