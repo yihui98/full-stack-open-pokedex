@@ -31,14 +31,14 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:5000
-      - name: heroku deploy
-        uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "fast-reaches-52759"
-          heroku_email: "yihui98@live.com"
-          healthcheck: "https://fast-reaches-52759.herokuapp.com/health"
-          rollbackonhealthcheckfailed: true
+      #- name: heroku deploy
+      #  uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
+      #  with:
+      #    heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+      #    heroku_app_name: "fast-reaches-52759"
+      #    heroku_email: "yihui98@live.com"
+      #    healthcheck: "https://fast-reaches-52759.herokuapp.com/health"
+      #    rollbackonhealthcheckfailed: true
       - uses: actions/checkout@v2
       - name: Bump version and push tag
         if: ${{ github.ref == 'master' }}
