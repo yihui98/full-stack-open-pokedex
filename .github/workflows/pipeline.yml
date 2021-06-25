@@ -41,7 +41,7 @@ jobs:
       #    rollbackonhealthcheckfailed: true
       - uses: actions/checkout@v2
       - name: Bump version and push tag
-        if: ${{ contains(join(toJson(github.event.commits.*.message), ''), 'skip') }}
+        if: ${{ !contains(join(toJson(github.event.commits.*.message), ''), 'skip') }}
         uses: anothrNick/github-tag-action@1.33.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -49,6 +49,4 @@ jobs:
       - name: commit messages
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-          CONDITION: ${{ contains(join(toJson(github.event.commits.*.message), ''), 'skip') }}
-          CONDITION2: ${{ join(toJson(github.event.commits.*.message), '') }}
-        run: echo "$COMMIT_MESSAGES" "$CONDITION" "$CONDITION2"
+        run: echo "$COMMIT_MESSAGES" 
