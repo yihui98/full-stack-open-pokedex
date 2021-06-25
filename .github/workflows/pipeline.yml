@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
   simple_deployment_pipeline:
@@ -34,3 +37,4 @@ jobs:
           heroku_app_name: "fast-reaches-52759"
           heroku_email: "yihui98@live.com"
           healthcheck: "https://fast-reaches-52759.herokuapp.com/health"
+          rollbackonhealthcheckfailed: true
