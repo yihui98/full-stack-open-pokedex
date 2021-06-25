@@ -1,0 +1,16 @@
+name: Telegram Notifications
+
+on: [push]
+
+jobs:
+
+  build:
+    name: Telegram Notifications
+    runs-on: ubuntu-18.04
+    steps:
+      - name: send custom message with args
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        args: The ${{ github.event_name }} event triggered first step.
