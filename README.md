@@ -145,8 +145,8 @@ Let us change events that trigger of the workflow as follows:
 
 ## Notifications
 
-[Slack](https://fullstackopen.com/en/part11/expanding_further#exercise-11-19)
-[Telegram](https://fullstackopen.com/en/part11/expanding_further#exercise-11-19-alternative-version-for-telegram)
+- [Slack](https://fullstackopen.com/en/part11/expanding_further#exercise-11-19)
+- [Telegram](https://fullstackopen.com/en/part11/expanding_further#exercise-11-19-alternative-version-for-telegram)
 
 
 
